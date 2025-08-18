@@ -182,6 +182,31 @@ const Index = () => {
       question: "How does Nigeria's climate, particularly dust from the Harmattan season, affect solar panels?",
       answer: "Accumulation of dust and dirt on solar panels, especially during the Harmattan season, significantly reduces their efficiency by blocking sunlight and hindering energy generation.",
       solution: "Suntecksolars educates customers on the importance of regular maintenance and cleaning. They offer comprehensive after-sales support and maintenance packages that include scheduled cleanings and inspections to keep the panels operating at peak efficiency."
+    },
+    {
+      question: "How do solar systems address the need for power when there's no sunlight, such as at night or on cloudy days?",
+      answer: "A solar system's ability to provide continuous power depends on its energy storage solution, typically a battery. Without a high-quality battery, a system can't store excess energy, making it unreliable during off-peak hours.",
+      solution: "Suntecksolars integrates advanced battery storage solutions into its systems. These high-capacity batteries store surplus energy generated during the day, ensuring a consistent and uninterrupted power supply 24/7."
+    },
+    {
+      question: "What is the function of a solar inverter, and what issues can arise from a low-quality one?",
+      answer: "The inverter converts the direct current (DC) from solar panels into the alternating current (AC) used by household appliances. A poor-quality inverter can be inefficient, leading to power loss and potential system failure.",
+      solution: "Suntecksolars uses high-efficiency inverters from leading manufacturers. These smart inverters are designed to maximize energy conversion, reduce power loss, and provide real-time monitoring of system performance."
+    },
+    {
+      question: "What is the lifespan of a typical solar system, and what factors can shorten it?",
+      answer: "While solar panels can last for decades, other components like batteries and inverters have shorter lifespans. A lack of proper maintenance can accelerate the degradation of the entire system.",
+      solution: "Suntecksolars offers a long-term performance warranty and regular maintenance services. This ensures that the system is proactively checked for issues, and components are replaced as needed, maximizing the system's longevity and return on investment."
+    },
+    {
+      question: "Why do some customers remain skeptical about the benefits of solar energy?",
+      answer: "Many potential customers lack a clear understanding of how solar systems work, the long-term cost savings, and the environmental benefits. This knowledge gap can lead to skepticism and a reluctance to invest.",
+      solution: "Suntecksolars is committed to educating Nigerians on the benefits of switching to solar energy. The company empowers customers with knowledge about its clean and renewable solutions and the financial advantages of its flexible payment plans. To reach a wider audience and provide a platform for direct engagement, Suntecksolars has launched \"Solar Yan with the Celebritysolarman,\" Nigeria's first solar radio program. Hosted by the CEO, the show airs every Friday from 3:30 PM to 4:00 PM on Speed FM 96.9, where listeners can learn more and ask questions live. You can stream the program at https://www.speedfm969.com."
+    },
+    {
+      question: "How can a homeowner or business ensure they are using their solar-generated electricity most effectively?",
+      answer: "Without a way to monitor and manage energy usage, customers might not be taking full advantage of their solar system. They may be using stored energy inefficiently or not maximizing the use of solar power during the day.",
+      solution: "Suntecksolars provides advanced monitoring systems that allow customers to track their energy production and consumption in real-time. This helps them optimize their energy use, manage their savings, and fully benefit from their investment."
     }
   ];
 
