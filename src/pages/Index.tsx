@@ -317,7 +317,7 @@ const Index = () => {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  className="border-primary-foreground text-black hover:bg-primary-foreground hover:text-primary"
                 >
                   <a href="https://instagram.com/suntecksolars" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                     <Instagram size={20} />
