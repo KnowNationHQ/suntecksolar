@@ -1,5 +1,6 @@
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-brand-950: #011a14;

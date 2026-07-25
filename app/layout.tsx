@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-import { Toaster } from "sonner"
+import { ThemeToaster } from "@/components/layout/theme-toaster"
 import { BottomNav } from "@/components/layout/bottom-nav"
 import { Header } from "@/components/layout/header"
 
@@ -164,7 +164,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsent />
         <ScrollUp />
         <PageLoader />
-        <Toaster position="top-right" theme="dark" />
+        <ThemeToaster />
       </body>
     </html>
   )
