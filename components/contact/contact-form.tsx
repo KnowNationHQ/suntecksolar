@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
+import { sanitize } from "@/lib/sanitize"
 import { Send, CheckCircle2, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -51,7 +52,8 @@ export function ContactForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormData>({ resolver: zodResolver(schema) })
   const onSubmit = async (data: FormData) => {
     try {
-      await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+      const clean = { ...data, firstName: sanitize(data.firstName), lastName: sanitize(data.lastName), subject: sanitize(data.subject), message: sanitize(data.message) }
+      await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(clean) })
       setSuccess(true)
       reset()
     } catch { /* fallback — show success either way */ setSuccess(true); reset() }

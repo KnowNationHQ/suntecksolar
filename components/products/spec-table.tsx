@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Search, Zap, Shield, Battery, Cable, Cog } from "lucide-react"
+import { sanitize } from "@/lib/sanitize"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -41,7 +42,7 @@ export function SpecTable() {
         </div>
         <div className="relative mb-4">
           <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-500" />
-          <Input id="spec-search" value={filter} onChange={(e) => setFilter(e.target.value)} placeholder="Find your solar component..." className="pl-10 h-12 bg-surface-900 border-surface-750 text-surface-300 placeholder:text-surface-500" />
+          <Input id="spec-search" value={filter} onChange={(e) => setFilter(sanitize(e.target.value))} placeholder="Find your solar component..." className="pl-10 h-12 bg-surface-900 border-surface-750 text-surface-300 placeholder:text-surface-500" />
         </div>
         <Accordion type="single" collapsible className="space-y-2">
           {rows.map((row, i) => {
