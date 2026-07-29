@@ -43,7 +43,7 @@ export function HowItWorks() {
           {STEPS.map((s, i) => (
             <Card key={s.title} className={`border-surface-800/50 bg-surface-900/50 overflow-hidden hover:border-gold-500/20 transition-all duration-700 ease-out hover:scale-[1.02] hover:shadow-lg hover:shadow-gold-500/5 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`} style={{ transitionDelay: `${i * 150}ms` }}>
               <div className="relative h-36 sm:h-32 bg-surface-900">
-                <Image src={s.img} alt="" fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
+                <Image src={s.img} alt={s.title.replace(/^\d+\.\s*/, '')} fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="size-12 rounded-full bg-gold-500/20 backdrop-blur-sm flex items-center justify-center">
                     <s.icon className="size-6 text-gold-400" />

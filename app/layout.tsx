@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | SunteckSolar Nigeria",
   },
   description:
-    "Nigeria's trusted solar company. Buy solar panels, inverters, batteries & water pumps with pay-in-3 or pay-in-6 financing. Professional installation in Benin City, Agbor & nationwide. Save on generator fuel today.",
+    "Nigeria's trusted solar company. Buy solar panels, inverters & batteries with pay-in-3 or pay-in-6. Professional installation in Benin City, Agbor & nationwide.",
   keywords: [
     "solar panels Nigeria", "solar installation Benin City", "solar company Nigeria",
     "solar inverter price Nigeria", "buy solar panels Nigeria", "solar energy Agbor",
@@ -72,6 +72,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#0a0a0a",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

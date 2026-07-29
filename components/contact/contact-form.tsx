@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
+import { createPortal } from "react-dom"
 
 const schema = z.object({
   firstName: z.string().min(1, "Required"),
@@ -78,7 +79,7 @@ export function ContactForm() {
         </CardContent>
       </Card>
 
-      {showPopup && (
+      {showPopup && typeof window !== "undefined" && createPortal(
         <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center" onClick={() => setShowPopup(false)}>
           <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
           <div className="relative bg-surface-900 border border-surface-700/50 rounded-t-3xl sm:rounded-2xl p-6 sm:p-8 pt-8 sm:pt-8 max-w-sm w-full text-center shadow-2xl animate-[slide-up_0.35s_ease-out] sm:mx-4 sm:mb-0" onClick={(e) => e.stopPropagation()}>
@@ -94,7 +95,8 @@ export function ContactForm() {
               Got It
             </Button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )

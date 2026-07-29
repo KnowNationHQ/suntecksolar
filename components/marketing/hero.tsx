@@ -41,7 +41,7 @@ export function Hero() {
             </Badge>
           </div>
           <h1 className="text-[1.65rem] sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-2 sm:mb-3 font-display">
-            Never Pay for<br />
+            Never Pay for <br />
             <span className="text-gold-400">Generator Fuel Again</span>
           </h1>
           <p className="text-sm sm:text-base text-white/70 max-w-xl mb-6 leading-relaxed mx-auto">
