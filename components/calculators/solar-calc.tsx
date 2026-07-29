@@ -56,7 +56,7 @@ export function SolarCalc() {
                     <div key={a.id} className="flex items-center justify-between py-3 border-b border-surface-800 last:border-0">
                       <div className="min-w-0">
                         <p className="text-sm font-medium text-surface-200 truncate">{a.name}</p>
-                        <p className="text-xs text-surface-500">{a.watts}W &mdash; {a.description}</p>
+                        <p className="text-xs text-surface-400">{a.watts}W &mdash; {a.description}</p>
                       </div>
                       <div className="flex items-center gap-2 flex-shrink-0 ml-3">
                         <button onClick={() => updateQty(a.id, (quantities[a.id] || 0) - 1)} className="size-12 rounded-lg bg-surface-800 text-surface-400 hover:text-surface-100 flex items-center justify-center text-sm transition-colors touch-target">&minus;</button>
