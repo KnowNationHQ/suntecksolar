@@ -18,9 +18,9 @@ const DATA: SpecRow[] = [
 ]
 
 const COLOR_MAP: Record<string, { border: string; dot: string; bg: string; text: string; badge: string }> = {
-  emerald: { border: "border-l-emerald-500", dot: "bg-emerald-500", bg: "bg-emerald-500/10", text: "text-emerald-400", badge: "border-emerald-500/20 text-emerald-700 dark:text-emerald-400 bg-emerald-500/10" },
+  emerald: { border: "border-l-emerald-500", dot: "bg-emerald-500", bg: "bg-emerald-500/10", text: "text-emerald-400", badge: "border-emerald-500/20 text-emerald-800 dark:text-emerald-400 bg-emerald-500/10" },
   gold: { border: "border-l-gold-500", dot: "bg-gold-500", bg: "bg-gold-500/10", text: "text-gold-400", badge: "border-gold-500/20 text-amber-800 dark:text-gold-400 bg-gold-500/10" },
-  amber: { border: "border-l-amber-500", dot: "bg-amber-500", bg: "bg-amber-500/10", text: "text-amber-400", badge: "border-amber-500/20 text-amber-700 dark:text-amber-400 bg-amber-500/10" },
+  amber: { border: "border-l-amber-500", dot: "bg-amber-500", bg: "bg-amber-500/10", text: "text-amber-400", badge: "border-amber-500/20 text-amber-800 dark:text-amber-400 bg-amber-500/10" },
 }
 
 const LABELS: Record<string, string> = { material: "Material", cert: "Certification", warranty: "Warranty" }
