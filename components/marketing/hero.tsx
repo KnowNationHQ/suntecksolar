@@ -52,7 +52,7 @@ export function Hero() {
               <Zap size={18} /> Get Your Free Quote <ArrowRight size={16} />
             </Button>
             <a href="https://instagram.com/suntecksolars" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 shadow-lg shadow-gold-500/25 font-semibold w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="bg-transparent border-neutral-700 text-neutral-300 hover:border-gold-500/40 hover:text-gold-400 hover:bg-gold-500/5 w-full sm:w-auto">
                 <Instagram size={16} /> Follow Us on Instagram
               </Button>
             </a>
