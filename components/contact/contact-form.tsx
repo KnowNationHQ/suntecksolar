@@ -79,9 +79,9 @@ export function ContactForm() {
       </Card>
 
       {showPopup && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={() => setShowPopup(false)}>
+        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center" onClick={() => setShowPopup(false)}>
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-          <div className="relative bg-surface-900 border border-surface-700 rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl animate-[fade-up_0.3s_ease-out]" onClick={(e) => e.stopPropagation()}>
+          <div className="relative bg-surface-900 border border-surface-700 rounded-2xl sm:rounded-2xl rounded-b-none sm:rounded-b-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl animate-[fade-up_0.3s_ease-out] sm:mx-4" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setShowPopup(false)} className="absolute top-3 right-3 size-8 rounded-full bg-surface-800 flex items-center justify-center text-surface-400 hover:text-surface-100 transition-colors">
               <X size={16} />
             </button>
