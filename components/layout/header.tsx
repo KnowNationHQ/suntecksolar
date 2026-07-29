@@ -20,22 +20,24 @@ export function Header() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="flex items-center justify-between h-14 px-4 max-w-5xl mx-auto">
-        <button onClick={() => scrollTo("home")} className="flex items-center shrink-0">
-          <img src="/assets/suntecksolar-logo.png" alt="SunteckSolar" className="h-7 sm:h-8 w-auto" />
-        </button>
-        <nav className="hidden md:flex items-center justify-center gap-0.5">
-          {NAV.map((item) => (
-            <Button key={item.href} onClick={() => scrollTo(item.href)} variant="ghost" size="sm" className="text-surface-500 hover:text-surface-900 dark:hover:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-800">
-              {item.label}
-            </Button>
-          ))}
-        </nav>
-        <div className="flex items-center gap-1">
-          <ThemeToggle />
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 glass">
+        <div className="flex items-center justify-between h-14 px-4 max-w-5xl mx-auto">
+          <button onClick={() => scrollTo("home")} className="flex items-center shrink-0">
+            <img src="/assets/suntecksolar-logo.png" alt="SunteckSolar" className="h-7 sm:h-8 w-auto" />
+          </button>
+          <nav className="hidden md:flex items-center justify-center gap-0.5">
+            {NAV.map((item) => (
+              <Button key={item.href} onClick={() => scrollTo(item.href)} variant="ghost" size="sm" className="text-surface-500 hover:text-surface-900 dark:hover:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-800">
+                {item.label}
+              </Button>
+            ))}
+          </nav>
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+          </div>
         </div>
-      </div>
+      </header>
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className={`fixed bottom-20 md:bottom-6 right-6 z-[60] p-3 rounded-full bg-gradient-to-r from-gold-500 to-gold-400 text-black shadow-lg shadow-gold-500/25 transition-all duration-300 hover:scale-110 ${
@@ -45,7 +47,6 @@ export function Header() {
       >
         <ArrowUp size={20} />
       </button>
-
       {showConsent && (
         <div className="fixed bottom-24 lg:bottom-4 left-4 right-4 z-[100] max-w-md mx-auto lg:mx-0">
           <div className="bg-surface-900 border border-surface-700 rounded-xl p-4 shadow-2xl backdrop-blur-xl">
@@ -77,6 +78,6 @@ export function Header() {
           </div>
         </div>
       )}
-    </header>
+    </>
   )
 }
