@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import { BottomNav } from "@/components/layout/bottom-nav"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { PageLoader } from "@/components/layout/page-loader"
 import "./globals.css"
 
 const inter = Inter({
@@ -157,6 +158,7 @@ dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className={`${inter.variable} antialiased`}>
+        <PageLoader />
         <Header />
         <BottomNav />
         <main>{children}</main>
