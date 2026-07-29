@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Zap, ArrowRight } from "lucide-react"
+import { Zap, ArrowRight, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
@@ -51,9 +51,11 @@ export function Hero() {
             <Button onClick={() => scrollTo("calculator")} size="lg" className="bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 shadow-lg shadow-gold-500/25 font-semibold">
               <Zap size={18} /> Get Your Free Quote <ArrowRight size={16} />
             </Button>
-            <Button onClick={() => scrollTo("products")} variant="outline" size="lg" className="bg-transparent border-neutral-700 text-neutral-300 hover:border-gold-500/40 hover:text-gold-400 hover:bg-gold-500/5">
-              See Our Products
-            </Button>
+            <a href="https://instagram.com/suntecksolars" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="bg-transparent border-neutral-700 text-neutral-300 hover:border-gold-500/40 hover:text-gold-400 hover:bg-gold-500/5">
+                <Instagram size={16} /> Follow Us on Instagram
+              </Button>
+            </a>
           </div>
         </div>
       </div>

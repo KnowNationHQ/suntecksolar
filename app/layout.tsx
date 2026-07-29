@@ -29,8 +29,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://suntecksolars.com"),
   alternates: { canonical: "/" },
   icons: {
-    icon: "/assets/suntecksolar-logo.png",
-    apple: "/assets/suntecksolar-logo.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
   },
   other: {
     "geo.region": "NG",
