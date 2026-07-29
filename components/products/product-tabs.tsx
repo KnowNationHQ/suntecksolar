@@ -1,14 +1,11 @@
 "use client"
 
-"use client"
-
 import { useState } from "react"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { useScroll } from "@/hooks/use-scroll"
 import { useInView } from "@/hooks/use-in-view"
 
 const PRODUCTS = [
@@ -32,7 +29,7 @@ const PRODUCTS = [
 
 export function ProductTabs() {
   const [active, setActive] = useState(PRODUCTS[0].id)
-  const { scrollTo } = useScroll()
+  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })
   const current = PRODUCTS.find((p) => p.id === active)!
   const [ref, visible] = useInView(0.1)
 

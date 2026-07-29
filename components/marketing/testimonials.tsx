@@ -1,8 +1,7 @@
 "use client"
 
-"use client"
-
 import { Star } from "lucide-react"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useInView } from "@/hooks/use-in-view"
@@ -29,10 +28,12 @@ export function Testimonials() {
           {DATA.map((t, i) => (
             <Card key={i} className={`border-surface-800/50 bg-surface-900/50 transition-all duration-700 ease-out hover:scale-[1.01] hover:border-gold-500/20 hover:shadow-lg hover:shadow-gold-500/5 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`} style={{ transitionDelay: `${i * 100}ms` }}>
               <CardContent className="p-4 sm:p-5 flex gap-4 items-start">
-                <img
+                <Image
                   src={t.img}
                   alt={t.author}
-                  className="size-14 sm:size-16 rounded-full flex-shrink-0 mt-0.5"
+                  width={64}
+                  height={64}
+                  className="size-14 sm:size-16 rounded-full flex-shrink-0 mt-0.5 object-cover"
                 />
                 <div className="min-w-0 flex-1">
                   <div className="flex gap-0.5 mb-2">

@@ -2,19 +2,16 @@
 
 import { useState, useEffect } from "react"
 import { Home, Package, Calculator, MessageCircle, HelpCircle } from "lucide-react"
-import { useScroll } from "@/hooks/use-scroll"
+import { NAV } from "@/lib/nav"
 
-const TABS = [
-  { label: "Home", href: "home", icon: Home },
-  { label: "Products", href: "products", icon: Package },
-  { label: "Calculator", href: "calculator", icon: Calculator },
-  { label: "FAQs", href: "faqs", icon: HelpCircle },
-  { label: "Contact", href: "contact", icon: MessageCircle },
-]
+const TABS = NAV.map((n) => ({
+  label: n.label,
+  href: n.href,
+  icon: [Home, Package, Calculator, HelpCircle, MessageCircle][["home", "products", "calculator", "faqs", "contact"].indexOf(n.href)],
+}))
 
 export function BottomNav() {
   const [active, setActive] = useState("home")
-  const { scrollTo } = useScroll()
 
   useEffect(() => {
     const onScroll = () => {
@@ -29,7 +26,7 @@ export function BottomNav() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const go = (id: string) => scrollTo(id)
+  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden pb-safe bg-surface-950/90 backdrop-blur-xl border-t border-surface-800">
@@ -40,7 +37,7 @@ export function BottomNav() {
           return (
             <button
               key={t.href}
-              onClick={() => go(t.href)}
+              onClick={() => scrollTo(t.href)}
               className="relative flex flex-col items-center justify-center gap-0.5 min-w-0 px-2 py-1 touch-target transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label={t.label}
             >

@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server"
 import nodemailer from "nodemailer"
-import { sanitize } from "@/lib/sanitize"
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.hostinger.com",
@@ -15,12 +14,12 @@ const transporter = nodemailer.createTransport({
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const firstName = sanitize(body.firstName)
-    const lastName = sanitize(body.lastName)
+    const firstName = typeof body.firstName === "string" ? body.firstName.trim() : ""
+    const lastName = typeof body.lastName === "string" ? body.lastName.trim() : ""
     const email = typeof body.email === "string" ? body.email.trim() : ""
     const phone = typeof body.phone === "string" ? body.phone.trim() : ""
-    const subject = sanitize(body.subject)
-    const message = sanitize(body.message)
+    const subject = typeof body.subject === "string" ? body.subject.trim() : ""
+    const message = typeof body.message === "string" ? body.message.trim() : ""
 
     if (!firstName || !lastName || !email || !phone || !subject || !message) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 })

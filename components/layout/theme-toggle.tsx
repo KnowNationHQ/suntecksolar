@@ -9,8 +9,7 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light")
 
   useEffect(() => {
-    const stored = localStorage.getItem("sunteck-theme") as Theme | null
-    if (stored === "dark" || stored === "light") setTheme(stored)
+    setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light")
   }, [])
 
   useEffect(() => {
@@ -20,16 +19,34 @@ export function ThemeToggle() {
     root.classList.add(theme)
   }, [theme])
 
-  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"))
   const isDark = theme === "dark"
 
   return (
     <button
-      onClick={toggle}
-      className="flex items-center justify-center p-2 rounded-lg transition-colors touch-target text-surface-500 hover:text-gold-500 bg-surface-100 hover:bg-surface-200 dark:bg-surface-800 dark:hover:text-brand-400 dark:hover:bg-surface-750"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="relative flex items-center w-12 h-6 rounded-full p-0.5 transition-colors duration-300 shrink-0 bg-gold-500/10 dark:bg-surface-800 ring-1 ring-gold-500/20 dark:ring-gold-500/20 hover:ring-gold-500/40"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
-      {isDark ? <Sun size={18} /> : <Moon size={18} />}
+      <span
+        className={`size-5 rounded-full flex items-center justify-center transition-all duration-300 shadow-sm ${
+          isDark
+            ? "translate-x-6 bg-surface-700 shadow-gold-500/10"
+            : "translate-x-0 bg-white shadow-gold-500/20"
+        }`}
+      >
+        <Sun
+          size={11}
+          className={`absolute transition-all duration-300 ${
+            isDark ? "opacity-0 scale-0" : "opacity-100 scale-100 text-gold-500"
+          }`}
+        />
+        <Moon
+          size={11}
+          className={`absolute transition-all duration-300 ${
+            isDark ? "opacity-100 scale-100 text-gold-300" : "opacity-0 scale-0"
+          }`}
+        />
+      </span>
     </button>
   )
 }

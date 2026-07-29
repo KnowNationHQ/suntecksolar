@@ -1,8 +1,8 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { Sun, Shield, Users, CheckCircle, Zap, BarChart3, Building2, Award } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { useInView } from "@/hooks/use-in-view"
 
 const FEATURES = [
   { icon: Sun, title: "Clean Energy, Zero Emissions", desc: "Solar power cuts your electricity bills while reducing your carbon footprint. Pair with battery storage for 24/7 coverage.", color: "gold" },
@@ -11,51 +11,20 @@ const FEATURES = [
 ]
 
 const STATS = [
-  { raw: 5000, suffix: "+", label: "Installations", icon: Zap, color: "gold" },
-  { raw: 2, suffix: " MW+", label: "Capacity Deployed", icon: BarChart3, color: "green" },
-  { raw: 12, suffix: "+", label: "Years in Business", icon: Building2, color: "teal" },
-  { raw: 98, suffix: "%", label: "Satisfaction", icon: Award, color: "gold" },
+  { value: "5,000+", label: "Installations", icon: Zap, color: "gold" },
+  { value: "2 MW+", label: "Capacity Deployed", icon: BarChart3, color: "emerald" },
+  { value: "12+", label: "Years in Business", icon: Building2, color: "teal" },
+  { value: "98%", label: "Satisfaction", icon: Award, color: "gold" },
 ]
 
 const COLOR_MAP: Record<string, { border: string; glow: string; from: string; via: string; text: string; iconBg: string; iconText: string; line: string }> = {
   gold: { border: "border-gold-500/30", glow: "shadow-gold-500/15", from: "from-gold-500/10", via: "via-gold-500/5", text: "text-gold-500", iconBg: "bg-gold-500/15", iconText: "text-gold-500", line: "bg-gold-500" },
   emerald: { border: "border-emerald-500/30", glow: "shadow-emerald-500/15", from: "from-emerald-500/10", via: "via-emerald-500/5", text: "text-emerald-500", iconBg: "bg-emerald-500/15", iconText: "text-emerald-500", line: "bg-emerald-500" },
-  green: { border: "border-emerald-500/30", glow: "shadow-emerald-500/15", from: "from-emerald-500/10", via: "via-emerald-500/5", text: "text-emerald-500", iconBg: "bg-emerald-500/15", iconText: "text-emerald-500", line: "bg-emerald-500" },
   teal: { border: "border-teal-500/30", glow: "shadow-teal-500/15", from: "from-teal-500/10", via: "via-teal-500/5", text: "text-teal-500", iconBg: "bg-teal-500/15", iconText: "text-teal-500", line: "bg-teal-500" },
 }
 
-function useOnScreen(threshold = 0.2) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect() } }, { threshold })
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-  return [ref, visible] as const
-}
-
-function Counter({ to, suffix, visible }: { to: number; suffix: string; visible: boolean }) {
-  const [val, setVal] = useState(0)
-  useEffect(() => {
-    if (!visible) return
-    let start: number | null = null
-    const dur = Math.min(1500, to * 15)
-    const go = (t: number) => {
-      if (!start) start = t
-      const p = Math.min((t - start) / dur, 1)
-      setVal(Math.floor(p * to))
-      if (p < 1) requestAnimationFrame(go)
-    }
-    requestAnimationFrame(go)
-  }, [visible, to])
-  return <>{visible ? val.toLocaleString() + suffix : "0" + suffix}</>
-}
-
 export function About() {
-  const [ref, visible] = useOnScreen(0.15)
+  const [ref, visible] = useInView(0.15)
 
   return (
     <section id="about" className="section-wrap relative overflow-hidden">
@@ -121,7 +90,7 @@ export function About() {
                         <Icon size={15} className={c.iconText} />
                       </span>
                       <div className={`${c.text} text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight leading-none mb-1`}>
-                        <Counter to={s.raw} suffix={s.suffix} visible={visible} />
+                        {visible ? s.value : "0"}
                       </div>
                       <div className="text-xs text-surface-500">{s.label}</div>
                     </div>

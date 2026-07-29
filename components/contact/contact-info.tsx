@@ -30,7 +30,7 @@ export function ContactInfo() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-surface-500 mb-1.5">{group.label}</p>
                   <div className="space-y-1">
                     {group.items.map((item) => {
-                      const href = group.href + (group.label === "Phone" ? item.replace(/\D/g, "") : group.label === "Social" ? item.replace(/^@/, "") : item)
+                      const href = group.href + (group.label === "Phone" ? item : group.label === "Social" ? item.replace(/^@/, "") : item)
                       return (
                         <a
                           key={item}

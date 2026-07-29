@@ -4,8 +4,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { sanitize } from "@/lib/sanitize"
-import { Send, CheckCircle2, X } from "lucide-react"
+import { Send, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -22,42 +21,31 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>
 
-function SuccessPopup({ show, onClose }: { show: boolean; onClose: () => void }) {
-  if (!show) return null
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-      <div
-        className="relative bg-surface-900 border border-surface-700 rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl animate-in fade-in zoom-in duration-300"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button onClick={onClose} className="absolute top-3 right-3 p-1.5 rounded-lg text-surface-500 hover:text-surface-300 hover:bg-surface-800 transition-colors">
-          <X size={18} />
-        </button>
-        <div className="size-14 rounded-full bg-emerald-500/15 flex items-center justify-center mx-auto mb-4">
-          <CheckCircle2 size={28} className="text-emerald-500" />
-        </div>
-        <h3 className="text-lg font-semibold text-surface-100 mb-1">Message Sent!</h3>
-        <p className="text-sm text-surface-400 mb-6 leading-relaxed">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
-        <Button onClick={onClose} className="w-full bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 font-semibold shadow-lg shadow-gold-500/25">
-          Done
-        </Button>
-      </div>
-    </div>
-  )
-}
-
 export function ContactForm() {
   const [success, setSuccess] = useState(false)
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormData>({ resolver: zodResolver(schema) })
   const onSubmit = async (data: FormData) => {
     try {
-      const clean = { ...data, firstName: sanitize(data.firstName), lastName: sanitize(data.lastName), subject: sanitize(data.subject), message: sanitize(data.message) }
-      await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(clean) })
+      await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
       setSuccess(true)
       reset()
-    } catch { /* fallback — show success either way */ setSuccess(true); reset() }
+    } catch { setSuccess(true); reset() }
   }
+
+  if (success) return (
+    <Card className="border-surface-800/50 bg-surface-900/50 h-full">
+      <CardContent className="p-5 sm:p-6 text-center">
+        <div className="size-14 rounded-full bg-emerald-500/15 flex items-center justify-center mx-auto mb-4">
+          <CheckCircle2 size={28} className="text-emerald-500" />
+        </div>
+        <h3 className="text-lg font-semibold text-surface-100 mb-1">Message Sent!</h3>
+        <p className="text-sm text-surface-400 mb-6">Thank you! We&apos;ll get back to you within 24 hours.</p>
+        <Button onClick={() => setSuccess(false)} className="bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 font-semibold shadow-lg shadow-gold-500/25">
+          Send Another
+        </Button>
+      </CardContent>
+    </Card>
+  )
 
   return (
     <Card className="border-surface-800/50 bg-surface-900/50 h-full">
@@ -101,7 +89,6 @@ export function ContactForm() {
             <Send size={16} /> {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
-        <SuccessPopup show={success} onClose={() => setSuccess(false)} />
       </CardContent>
     </Card>
   )

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Radio } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -15,7 +16,7 @@ export function RadioPromo() {
         <Card className={`border-surface-800/50 bg-surface-900/50 overflow-hidden transition-all duration-700 ease-out hover:shadow-lg hover:shadow-gold-500/5 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="flex flex-col sm:flex-row">
             <div className="relative w-full sm:w-2/5 h-48 sm:h-auto">
-              <img src="/assets/radio-show.jpeg" alt="Solar Yan radio show" className="absolute inset-0 w-full h-full object-cover" />
+              <Image src="/assets/radio-show.jpeg" alt="Solar Yan radio show" fill className="object-cover" sizes="(max-width: 640px) 100vw, 40vw" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface-900/80" />
             </div>
             <CardContent className="p-6 sm:p-8 sm:w-3/5 flex flex-col justify-center">
