@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
 const SLIDES = [
-  { src: "/assets/hero1.jpg" },
-  { src: "/assets/hero2.jpg" },
+  { src: "/assets/hero111.jpg" },
+  { src: "/assets/hero222.jpg" },
 ]
 
 export function Hero() {
