@@ -40,7 +40,7 @@ export function Header() {
       </header>
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed bottom-20 md:bottom-6 right-6 z-[60] p-3 rounded-full bg-gradient-to-r from-gold-500 to-gold-400 text-black shadow-lg shadow-gold-500/25 transition-all duration-300 hover:scale-110 ${
+        className={`fixed bottom-20 md:bottom-6 right-6 z-[70] p-3 rounded-full bg-gradient-to-r from-gold-500 to-gold-400 text-black shadow-lg shadow-gold-500/25 transition-all duration-300 hover:scale-110 ${
           showTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
         }`}
         aria-label="Scroll to top"
