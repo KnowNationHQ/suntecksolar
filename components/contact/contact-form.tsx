@@ -79,18 +79,18 @@ export function ContactForm() {
       </Card>
 
       {showPopup && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={() => setShowPopup(false)}>
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-          <div className="relative bg-surface-900 border border-surface-700 rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl animate-[fade-up_0.3s_ease-out]" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setShowPopup(false)} className="absolute top-3 right-3 size-8 rounded-full bg-surface-800 flex items-center justify-center text-surface-400 hover:text-surface-100 transition-colors">
-              <X size={16} />
+        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center" onClick={() => setShowPopup(false)}>
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
+          <div className="relative bg-surface-900 border border-surface-700/50 rounded-t-3xl sm:rounded-2xl p-6 sm:p-8 pt-8 sm:pt-8 max-w-sm w-full text-center shadow-2xl animate-[slide-up_0.35s_ease-out] sm:mx-4 sm:mb-0" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setShowPopup(false)} className="absolute top-4 right-4 size-9 rounded-full bg-surface-800 flex items-center justify-center text-surface-400 hover:text-surface-100 hover:bg-surface-700 transition-colors" aria-label="Close">
+              <X size={18} />
             </button>
-            <div className="size-16 rounded-full bg-emerald-500/15 flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 size={32} className="text-emerald-500" />
+            <div className="size-20 rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 flex items-center justify-center mx-auto mb-5 ring-1 ring-emerald-500/20">
+              <CheckCircle2 size={36} className="text-emerald-500" />
             </div>
-            <h3 className="text-xl font-bold text-surface-100 mb-2">Message Sent!</h3>
-            <p className="text-sm text-surface-400 mb-6 leading-relaxed">Thank you for reaching out! We&apos;ll get back to you within 24 hours.</p>
-            <Button onClick={() => setShowPopup(false)} className="bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 font-semibold shadow-lg shadow-gold-500/25 w-full">
+            <h3 className="text-2xl font-bold text-surface-100 mb-2">Message Sent!</h3>
+            <p className="text-sm text-surface-400 mb-8 leading-relaxed max-w-xs mx-auto">Thank you for reaching out! We&apos;ll get back to you within 24 hours.</p>
+            <Button onClick={() => setShowPopup(false)} className="bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 font-semibold shadow-lg shadow-gold-500/25 w-full h-12 text-base rounded-xl">
               Got It
             </Button>
           </div>
