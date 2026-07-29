@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 glass">
+      <header className="fixed top-0 left-0 right-0 z-50" style={{ background: "color-mix(in srgb, #fff 90%, transparent)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: "1px solid #e5e5e5" }}>
         <div className="flex items-center justify-between h-14 px-4 max-w-5xl mx-auto">
           <button onClick={() => scrollTo("home")} className="flex items-center shrink-0">
             <img src="/assets/suntecksolar-logo.png" alt="SunteckSolar" className="h-7 sm:h-8 w-auto" />
