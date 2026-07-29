@@ -34,8 +34,8 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 pb-16 animate-[fade-up_0.8s_ease-out_0.3s_both]">
-        <div className="max-w-2xl md:mx-auto md:text-center lg:text-left lg:mx-0">
-          <div className="flex items-center gap-2 mb-4 md:justify-center lg:justify-start">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="flex items-center gap-2 mb-4 justify-center">
             <Badge variant="outline" className="border-gold-500/20 text-gold-400 bg-gold-500/10 font-medium gap-1.5 px-3 py-1">
               <Zap size={12} /> Nigeria&apos;s Trusted Solar Brand
             </Badge>
@@ -44,10 +44,10 @@ export function Hero() {
             Never Pay for<br />
             <span className="text-gold-400">Generator Fuel Again</span>
           </h1>
-          <p className="text-sm sm:text-base text-white/70 max-w-xl mb-6 leading-relaxed md:mx-auto lg:mx-0">
+          <p className="text-sm sm:text-base text-white/70 max-w-xl mb-6 leading-relaxed mx-auto">
             Premium solar panels, inverters, and battery installations for Nigerian homes and businesses. Zero upfront cost with flexible payment plans up to 18 months.
           </p>
-          <div className="flex flex-col gap-3 w-full md:items-center lg:items-stretch">
+          <div className="flex flex-col gap-3 w-full items-center">
             <Button onClick={() => scrollTo("calculator")} size="lg" className="bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 shadow-lg shadow-gold-500/25 font-semibold w-full">
               <Zap size={18} /> Get Your Free Quote <ArrowRight size={16} />
             </Button>
