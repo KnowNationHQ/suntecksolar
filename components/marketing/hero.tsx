@@ -18,7 +18,7 @@ export function Hero() {
   const prev = () => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length)
 
   return (
-    <section id="home" className="relative min-h-[70svh] flex items-end overflow-hidden pt-14">
+    <section id="home" className="relative min-h-dvh flex items-end overflow-hidden pt-14">
       <div className="absolute inset-0">
         {SLIDES.map((slide, i) => (
           <div
