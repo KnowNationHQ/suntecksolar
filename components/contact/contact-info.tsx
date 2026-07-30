@@ -11,7 +11,7 @@ const CONTACT_METHODS = [
 
 const LOCATIONS = [
   { city: "Benin City", address: "23, Iduowina Road, Off Benin Auchi Road" },
-  { city: "Agbor", address: "45, Along Owa-Ekei Road, after Owa-Ekei Townhall, Boji Boji Owa" },
+  { city: "Agbor", address: "45, Along Owa -ekei road after Owa-ekei townhall, Boji Boji Owa, Agbor, Delta state" },
 ]
 
 export function ContactInfo() {

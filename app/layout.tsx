@@ -106,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ],
         address: [
           { "@type": "PostalAddress", addressLocality: "Benin City", addressRegion: "Edo", streetAddress: "23, Iduowina Road, Off Benin Auchi Road", addressCountry: "NG" },
-          { "@type": "PostalAddress", addressLocality: "Agbor", addressRegion: "Delta", streetAddress: "45, Along Owa-Ekei Road, after Owa-Ekei Townhall, Boji Boji Owa", addressCountry: "NG" },
+          { "@type": "PostalAddress", addressLocality: "Agbor", addressRegion: "Delta", streetAddress: "45, Along Owa -ekei road after Owa-ekei townhall, Boji Boji Owa, Agbor, Delta state", addressCountry: "NG" },
         ],
       },
       {
