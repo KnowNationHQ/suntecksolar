@@ -1,4 +1,4 @@
-const SHELL = ["/", "/manifest.json", "/icon-192.png", "/icon-512.png", "/maskable-192.png", "/maskable-512.png", "/apple-touch-icon.png", "/apple-touch-icon-152.png", "/apple-touch-icon-167.png", "/apple-touch-icon-120.png", "/apple-touch-icon-76.png", "/favicon.png", "/favicon-16.png", "/favicon-32.png", "/assets/suntecksolar-logo.png"]
+const SHELL = ["/", "/manifest.json", "/icon-192.png", "/icon-512.png", "/maskable-192.png", "/maskable-512.png", "/apple-touch-icon.png", "/apple-touch-icon-152.png", "/apple-touch-icon-167.png", "/apple-touch-icon-120.png", "/apple-touch-icon-76.png", "/favicon.png", "/favicon-16.png", "/favicon-32.png", "/assets/suntecksolar-logo.png", "/screenshot-wide.png", "/screenshot-narrow.png"]
 const CACHE = "sunteck-v1"
 
 self.addEventListener("install", (e) => {
