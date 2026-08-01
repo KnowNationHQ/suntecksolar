@@ -1,4 +1,4 @@
-import { Instagram, Mail, Phone, MapPin } from "lucide-react"
+import { Instagram, Mail, Phone, MapPin, Twitter } from "lucide-react"
 import { NAV } from "@/lib/nav"
 
 export function Footer() {
@@ -39,9 +39,14 @@ export function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-surface-800">
           <p className="text-xs text-surface-600">&copy; 2024 SunteckSolar. All rights reserved.</p>
-          <a href="https://instagram.com/suntecksolars" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs text-surface-500 hover:text-gold-400 transition-colors">
-            <Instagram size={14} /> @suntecksolars
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="https://instagram.com/suntecksolars" target="_blank" rel="noopener noreferrer" aria-label="SunteckSolar on Instagram" className="inline-flex items-center gap-2 text-xs text-surface-500 hover:text-gold-400 transition-colors">
+              <Instagram size={14} /> @suntecksolars
+            </a>
+            <a href="https://x.com/suntecksolars" target="_blank" rel="noopener noreferrer" aria-label="SunteckSolar on X" className="inline-flex items-center gap-2 text-xs text-surface-500 hover:text-gold-400 transition-colors">
+              <Twitter size={14} /> @suntecksolars
+            </a>
+          </div>
         </div>
       </div>
     </footer>

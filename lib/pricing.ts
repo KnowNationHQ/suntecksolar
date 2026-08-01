@@ -19,5 +19,5 @@ export const PRICING = {
   costPerKw: 150000,
   depositRate: 0.20,
   generatorFuelPerKwh: 450,
-  paymentTerms: [3, 6, 12, 18] as const,
+  paymentTerms: [3, 6, 12, 36] as const,
 } as const;

@@ -14,7 +14,7 @@ type Step = "loads" | "terms" | "review"
 export function SolarCalc() {
   const [step, setStep] = useState<Step>("loads")
   const [quantities, setQuantities] = useState<Record<string, number>>({})
-  const [months, setMonths] = useState<3 | 6 | 12 | 18>(12)
+  const [months, setMonths] = useState<3 | 6 | 12 | 36>(12)
 
   const updateQty = (id: string, val: number) => setQuantities((p) => ({ ...p, [id]: Math.max(0, Math.min(10, val)) }))
   const totalWatts = Object.entries(quantities).reduce((s, [id, qty]) => { const a = APPLIANCES.find((x) => x.id === id); return s + (a ? a.watts * qty : 0); }, 0)

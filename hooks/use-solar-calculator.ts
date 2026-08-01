@@ -2,7 +2,7 @@ import { APPLIANCES, PRICING } from "@/lib/pricing";
 
 interface CalculatorInputs {
   quantities: Record<string, number>;
-  months: 3 | 6 | 12 | 18;
+  months: 3 | 6 | 12 | 36;
 }
 
 interface PaymentPlan {
