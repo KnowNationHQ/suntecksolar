@@ -38,7 +38,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-surface-800">
-          <p className="text-xs text-surface-600">&copy; 2026 SunteckSolar. All rights reserved.</p>
+          <p className="text-xs text-surface-600">&copy; 2024 - 2026 SunteckSolar. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a href="https://instagram.com/suntecksolars" target="_blank" rel="noopener noreferrer" aria-label="SunteckSolar on Instagram" className="inline-flex items-center gap-2 text-xs text-surface-500 hover:text-gold-400 transition-colors">
               <Instagram size={14} /> @suntecksolars
