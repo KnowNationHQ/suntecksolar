@@ -45,7 +45,7 @@ export function Hero() {
             <span className="text-gold-400">Generator Fuel Again</span>
           </h1>
           <p className="text-sm sm:text-base text-white/70 max-w-xl mb-6 leading-relaxed mx-auto">
-            Premium solar panels, inverters, and battery installations for Nigerian homes and businesses. Zero upfront cost with flexible payment plans up to 18 months.
+            Premium solar panels, inverters, and battery installations for Nigerian homes and businesses. Zero upfront cost with flexible payment plans up to 36 months.
           </p>
           <div className="flex flex-col gap-3 w-full items-center">
             <Button onClick={() => scrollTo("calculator")} size="lg" className="bg-gradient-to-r from-gold-500 to-gold-400 text-black hover:from-gold-400 hover:to-gold-300 shadow-lg shadow-gold-500/25 font-semibold w-full">

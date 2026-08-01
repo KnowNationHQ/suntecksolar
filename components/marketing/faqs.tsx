@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { useInView } from "@/hooks/use-in-view"
 
 const FAQS = [
-  { q: "What is the main challenge for Nigerians switching to solar?", challenge: "High upfront cost of a complete system.", solution: "Flexible payment plans of up to 18 months, breaking costs into manageable installments." },
+  { q: "What is the main challenge for Nigerians switching to solar?", challenge: "High upfront cost of a complete system.", solution: "Flexible payment plans of up to 36 months, breaking costs into manageable installments." },
   { q: "How do you ensure product quality?", challenge: "Market flooded with low-quality counterfeit components.", solution: "We source from certified manufacturers with rigorous quality standards." },
   { q: "What if my system isn't sized correctly?", challenge: "Poor design leads to frequent outages.", solution: "Professional energy audit to assess needs and custom-design your system." },
   { q: "How does Harmattan affect solar panels?", challenge: "Dust accumulation reduces panel efficiency.", solution: "We offer maintenance packages including scheduled cleanings and inspections." },

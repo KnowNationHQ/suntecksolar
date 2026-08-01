@@ -160,7 +160,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "How does solar financing work - Nigeria?", acceptedAnswer: { "@type": "Answer", text: "We offer flexible payment plans with just 20% deposit and up to 18 months to pay. This makes solar energy accessible without the burden of full upfront payment for Nigerian homes and businesses." } },
+          { "@type": "Question", name: "How does solar financing work - Nigeria?", acceptedAnswer: { "@type": "Answer", text: "We offer flexible payment plans with just 20% deposit and up to 36 months to pay. This makes solar energy accessible without the burden of full upfront payment for Nigerian homes and businesses." } },
           { "@type": "Question", name: "What appliances can I run on solar power?", acceptedAnswer: { "@type": "Answer", text: "Our systems power everything from LED lights, ceiling fans, and TVs to refrigerators, freezers, water pumps, and air conditioners. Use our online calculator to estimate your exact power needs." } },
           { "@type": "Question", name: "How long does solar installation take - Nigeria?", acceptedAnswer: { "@type": "Answer", text: "Installation typically takes 1-2 days depending on system size. We handle everything from site assessment to final commissioning, serving Benin City, Agbor, and nationwide." } },
           { "@type": "Question", name: "Do solar panels work during Harmattan?", acceptedAnswer: { "@type": "Answer", text: "Yes. While Harmattan dust can reduce efficiency slightly, modern solar panels perform well in hazy conditions. Regular cleaning during Harmattan season helps maintain optimal output." } },
