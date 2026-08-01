@@ -13,11 +13,12 @@ export function PageLoader() {
   if (!show) return null
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-surface-950" style={{ animation: "fadeOut 0.4s ease 2.8s forwards" }}>
-      <div className="relative">
-        <img src="/assets/suntecksolar-logo.png" alt="" className="h-10 w-auto mb-6 opacity-90" />
-        <div className="absolute -inset-6 border-2 border-gold-500/30 rounded-full animate-[spin_2s_linear_infinite] border-t-gold-500" />
-        <div className="absolute -inset-10 border-2 border-emerald-500/20 rounded-full animate-[spin_3s_linear_infinite_reverse] border-t-emerald-500" />
+    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#fdf8ee]" style={{ animation: "fadeOut 0.4s ease 2.8s forwards" }}>
+      <div className="relative flex flex-col items-center px-6">
+        <img src="/assets/suntecksolar-logo.png" alt="" className="w-full max-w-[300px] sm:max-w-[380px] h-auto mb-10" />
+        <div className="relative">
+          <div className="w-10 h-10 border-2 border-gold-500/40 rounded-full border-t-gold-600 animate-spin" />
+        </div>
       </div>
     </div>
   )

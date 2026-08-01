@@ -4,6 +4,7 @@ import { BottomNav } from "@/components/layout/bottom-nav"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { PageLoader } from "@/components/layout/page-loader"
+import { PwaManager } from "@/components/pwa/pwa-manager"
 import "./globals.css"
 
 const inter = Inter({
@@ -29,9 +30,44 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://suntecksolars.com"),
   alternates: { canonical: "/" },
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon-152.png", sizes: "152x152", type: "image/png" },
+      { url: "/apple-touch-icon-167.png", sizes: "167x167", type: "image/png" },
+      { url: "/apple-touch-icon-120.png", sizes: "120x120", type: "image/png" },
+      { url: "/apple-touch-icon-76.png", sizes: "76x76", type: "image/png" },
+    ],
     shortcut: "/favicon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "SunteckSolar",
+    statusBarStyle: "black-translucent",
+    startupImage: [
+      { url: "/splash/iphone-pro-max.png", media: "(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone-pro.png", media: "(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone.png", media: "(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone-12.png", media: "(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone-se.png", media: "(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad-pro-12.png", media: "(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad-pro-11.png", media: "(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad.png", media: "(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad-mini.png", media: "(device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/iphone-pro-max-landscape.png", media: "(device-width: 932px) and (device-height: 430px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone-pro-landscape.png", media: "(device-width: 874px) and (device-height: 402px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone-landscape.png", media: "(device-width: 852px) and (device-height: 393px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone-12-landscape.png", media: "(device-width: 844px) and (device-height: 390px) and (-webkit-device-pixel-ratio: 3)" },
+      { url: "/splash/iphone-se-landscape.png", media: "(device-width: 667px) and (device-height: 375px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad-pro-12-landscape.png", media: "(device-width: 1366px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad-pro-11-landscape.png", media: "(device-width: 1194px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad-landscape.png", media: "(device-width: 1080px) and (device-height: 810px) and (-webkit-device-pixel-ratio: 2)" },
+      { url: "/splash/ipad-mini-landscape.png", media: "(device-width: 1133px) and (device-height: 744px) and (-webkit-device-pixel-ratio: 2)" },
+    ],
   },
   other: {
     "geo.region": "NG",
@@ -72,7 +108,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0a",
+  viewportFit: "cover",
+  themeColor: "#022c22",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -149,6 +186,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://api.fontshare.com" />
         <meta name="format-detection" content="telephone=yes" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="SunteckSolar" />
         <script
           dangerouslySetInnerHTML={{
             __html: "(function(){try{var t=localStorage.getItem('sunteck-theme');if(t==='dark'||t==='light')document.documentElement.classList.add(t);else document.documentElement.classList.add('light')}catch(e){}})()"
@@ -165,6 +205,7 @@ dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         <BottomNav />
         <main>{children}</main>
         <Footer />
+        <PwaManager />
       </body>
     </html>
   )

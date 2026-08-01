@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50" style={{ background: "color-mix(in srgb, #fff 90%, transparent)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: "1px solid #e5e5e5" }}>
+      <header className="fixed top-0 left-0 right-0 z-50 pt-safe" style={{ background: "color-mix(in srgb, #fff 90%, transparent)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: "1px solid #e5e5e5" }}>
         <div className="flex items-center justify-between h-14 px-4 max-w-5xl mx-auto">
           <button onClick={() => scrollTo("home")} className="flex items-center shrink-0">
             <img src="/assets/suntecksolar-logo.png" alt="SunteckSolar" className="h-7 sm:h-8 w-auto" />
@@ -57,7 +57,7 @@ export function Header() {
               <div className="min-w-0 flex-1">
                 <p className="text-sm text-surface-300 leading-relaxed">
                   This site stores your theme preference locally. No tracking or analytics cookies are used.{" "}
-                  <a href="/privacy" className="text-gold-400 underline hover:text-gold-300">Privacy Policy</a>.
+                  <a href="/privacy" className="text-gold-700 underline hover:text-gold-600 dark:text-gold-400 dark:hover:text-gold-300">Privacy Policy</a>.
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                   <button
@@ -68,6 +68,7 @@ export function Header() {
                   </button>
                   <button
                     onClick={() => setShowConsent(false)}
+                    aria-label="Dismiss cookie notice"
                     className="text-xs px-2 py-2 rounded-lg text-surface-500 hover:text-surface-300 transition-colors"
                   >
                     <X size={14} />
